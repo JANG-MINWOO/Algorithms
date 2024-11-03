@@ -5,7 +5,6 @@ class Solution {
         String answer = Stream.generate(()->"수박")
             .limit((n+1)/2)
             .collect(Collectors.joining());
-        
         return answer.substring(0,n);
     }
 }
