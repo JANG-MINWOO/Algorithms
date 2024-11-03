@@ -8,7 +8,6 @@ class Solution {
 
         for (int i = 0; i < length; i++) { // 입력 문자열의 각 문자를 순회
             char c = s.charAt(i); 
-
             if (Character.isLetter(c)) { // 단어의 시작인지 확인
                 // 문자가 알파벳인 경우 대소문자 변환
                 transformed.append((transformed.length() % 2 == 0) ? Character.toUpperCase(c) : Character.toLowerCase(c));
