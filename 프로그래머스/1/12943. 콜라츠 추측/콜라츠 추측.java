@@ -1,7 +1,6 @@
 class Solution {
     public int solution(int num) {
         int answer = 0;
-        
         if(num==1){
             answer=0;
         }else{
