@@ -4,7 +4,6 @@ class Solution {
         Arrays.sort(strings,(word1,word2)->{
             char char1 = word1.charAt(n);
             char char2 = word2.charAt(n);
-            
             if(char1 == char2){
                 return word1.compareTo(word2);
             }
