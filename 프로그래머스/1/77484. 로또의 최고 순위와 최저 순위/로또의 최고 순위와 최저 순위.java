@@ -3,7 +3,6 @@ class Solution {
         int[] answer = new int[2];
         int winCount = 0;
         int zeroCount = 0;
-        
         for(int i=0;i<lottos.length;i++){
             if(lottos[i]==0){
                 zeroCount++;
