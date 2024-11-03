@@ -12,6 +12,5 @@ class Solution {
         return answer;
     }
 }
-
 // abcdefghijklmnop 라는 문자열이면 16글자이고 인덱스는 0~15 중간의 두글자는 7번8번 2글자임
 // substring 을 사용해서 자르기
