@@ -9,7 +9,7 @@ class Solution {
                 int cnt = 1;
                 while(!str[i].equals(str[j])){ //1번째 인덱스를 비교할땐 str[1]이랑 str[0] 이랑 비교함
                     j--; //비교할 애를 앞인덱스로보내주고 j=0 일때 들어오면 j=-1이됨
-                    cnt++; //카운트는 1이됨
+                    cnt++; //카운트는 1임
                     if(j==-1){
                             answer[i]=-1;
                             break;
