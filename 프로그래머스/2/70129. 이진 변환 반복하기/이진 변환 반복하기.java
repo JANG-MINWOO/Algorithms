@@ -25,5 +25,3 @@ class Solution {
         return binary.length() > 0 ? binary.toString() : "0";  // 0일 경우 "0" 반환
     }
 }
-
-//1+2+
