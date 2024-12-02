@@ -2,17 +2,17 @@ import java.util.*;
 
 class Solution {
     public int solution(String s) {
-  int count = 0;
+        int answer = 0;
         int n = s.length();
         
         for (int i = 0; i < n; i++) {
             String rotated = s.substring(i) + s.substring(0, i); // 왼쪽으로 i칸 회전
             if (isValid(rotated)) {
-                count++;
+                answer++;
             }
         }
         
-        return count;
+        return answer;
     }
     
     private boolean isValid(String s) {
