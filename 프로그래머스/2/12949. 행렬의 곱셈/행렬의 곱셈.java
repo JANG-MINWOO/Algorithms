@@ -7,7 +7,7 @@ class Solution {
         int[][] answer = new int[row1][col2];
         
         for (int i = 0; i < row1; i++) { // arr1 의 행부터 순회
-            for (int j = 0; j < col2; j++) { // arr
+            for (int j = 0; j < col2; j++) { // arr2 의 열을 순회
                 for (int k = 0; k < col1; k++) {
                     answer[i][j] += arr1[i][k] * arr2[k][j];
                 }
