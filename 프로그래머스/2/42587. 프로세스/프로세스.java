@@ -2,34 +2,34 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] priorities, int location) {
-        // 프로세스를 관리하기 위해 큐를 선언
+        // 1번
         Queue<Process> queue = new LinkedList<>();
         
-        // 큐에 프로세스를 삽입 (우선순위와 위치 정보 포함)
+        // 2번
         for (int i = 0; i < priorities.length; i++) {
             queue.offer(new Process(i, priorities[i]));
         }
         
-        int order = 0; // 실행 순서를 기록
+        int order = 0; // 3번
         
         while (!queue.isEmpty()) {
-            Process current = queue.poll(); // 큐의 첫 번째 프로세스를 꺼냄
+            Process current = queue.poll(); // 4번
             
-            // 큐 안에 우선순위가 더 높은 프로세스가 있는지 확인
+            // 5번
             if (queue.stream().anyMatch(p -> p.priority > current.priority)) {
-                // 우선순위 높은 프로세스가 있다면 현재 프로세스를 다시 큐에 추가
+                // 6번
                 queue.offer(current);
             } else {
-                // 현재 프로세스를 실행
+                // 7번
                 order++;
                 if (current.index == location) {
-                    // 실행된 프로세스가 우리가 찾는 프로세스라면 실행 순서 반환
+                    // 8번 
                     return order;
                 }
             }
         }
         
-        return -1; // 정상적으로 실행되지 않는 경우 (예외 상황)
+        return -1; // 예외
     }
 }
 
@@ -43,3 +43,15 @@ class Process {
         this.priority = priority;
     }
 }
+
+
+// 순서
+// 1. 프로세스를 관리하기 위해 큐를 선언
+// 2. 큐에 프로세스를 삽입 (우선순위와 위치 정보 포함)
+// 3. 실행 순서를 기록
+// 4. 큐의 첫 번째 프로세스를 꺼냄
+// 5. 큐 안에 우선순위가 더 높은 프로세스가 있는지 확인
+// 6. 우선순위 높은 프로세스가 있다면 현재 프로세스를 다시 큐에 추가
+// 7. 현재 프로세스를 실행
+// 8. 실행된 프로세스가 우리가 찾는 프로세스라면 실행 순서 반환
+// 예외. 정상적으로 실행되지 않는 경우 (예외 상황)
