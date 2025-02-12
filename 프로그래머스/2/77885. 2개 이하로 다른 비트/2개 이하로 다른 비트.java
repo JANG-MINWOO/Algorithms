@@ -1,16 +1,9 @@
 class Solution {
     public long[] solution(long[] numbers) {
-        long[] answer = new long[numbers.length];
-        
-        for (int i = 0; i < numbers.length; i++) {
-            long x = numbers[i];
-            
-            if(x % 2 == 0) {
-                answer[i] = x + 1;
-            } else {
-                long lowestZeroBit = (x + 1) & ~(x);
-                answer[i] = (x | lowestZeroBit) & ~(lowestZeroBit >> 1);
-            }
+        long[] answer = numbers.clone();
+        for(int i = 0; i< answer.length; i++){
+            answer[i]++;
+            answer[i] += (answer[i]^numbers[i])>>>2;
         }
         return answer;
     }
