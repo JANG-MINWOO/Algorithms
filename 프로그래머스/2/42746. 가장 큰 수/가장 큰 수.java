@@ -6,7 +6,7 @@ class Solution {
             .mapToObj(String::valueOf)
             .toArray(String[]::new);
         
-        Arrays.sort(strNumbers, (b, a) -> (a + b).compareTo(b + a));
+        Arrays.sort(strNumbers, (a, b) -> (b+a).compareTo(a+b));
         
         if (strNumbers[0].equals("0")) return "0";
         
