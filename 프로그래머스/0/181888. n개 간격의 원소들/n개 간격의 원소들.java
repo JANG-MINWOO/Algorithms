@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public int[] solution(int[] num_list, int n) {
@@ -7,12 +8,11 @@ class Solution {
         for (int i = 0; i < num_list.length; i++) {
             if (i % n == 0) {
                 list.add(num_list[i]);
-            } 
+            }
         }
-        
         int[] answer = new int[list.size()];
         
-        for (int i = 0; i < answer.length; i++) {
+        for(int i = 0; i < answer.length; i++) {
             answer[i] = list.get(i);
         }
         return answer;
