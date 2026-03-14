@@ -1,10 +1,11 @@
 class Solution {
     public String solution(String my_string, int k) {
-        StringBuilder sumStr = new StringBuilder();
+        StringBuilder str = new StringBuilder();
+        
         for (int i = 0; i < k; i++) {
-            sumStr.append(my_string);
+            str.append(my_string);
         }
-        String answer = sumStr.toString();
+        String answer = str.toString();
         return answer;
     }
 }
