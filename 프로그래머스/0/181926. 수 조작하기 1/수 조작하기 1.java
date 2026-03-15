@@ -1,19 +1,14 @@
 class Solution {
     public int solution(int n, String control) {
-        int answer = n;
-        String[] strArr = control.split("");
+        String[] controls = control.split("");
         
-        for (int i = 0; i < strArr.length; i++) {
-            if (strArr[i].equals("w")) {
-                answer += 1;
-            } else if (strArr[i].equals("s")) {
-                answer -= 1;
-            } else if (strArr[i].equals("d")) {
-                answer += 10;
-            } else {
-                answer -= 10;
-            }
+        for (String s : controls) {
+            if (s.equals("w")) n++;
+            else if (s.equals("s")) n--;
+            else if (s.equals("d")) n += 10;
+            else n -= 10;
         }
-        return answer;
+        
+        return n;
     }
 }
