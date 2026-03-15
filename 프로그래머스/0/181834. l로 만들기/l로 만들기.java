@@ -1,17 +1,11 @@
 class Solution {
     public String solution(String myString) {
-        String example = "abcdefghijk";
-        String[] strArr = myString.split("");
-        
-        StringBuilder answer = new StringBuilder();
-        
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < myString.length(); i++) {
-            if (example.contains(strArr[i])) {
-                answer.append('l');
-            } else {
-                answer.append(strArr[i]);
-            }
+            if ((int) myString.charAt(i) > (int) 'l') sb.append(String.valueOf(myString.charAt(i)));
+            else sb.append(String.valueOf('l'));
         }
-        return answer.toString();
+        
+        return sb.toString();
     }
 }
