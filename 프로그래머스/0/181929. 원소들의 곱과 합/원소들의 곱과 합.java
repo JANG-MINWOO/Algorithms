@@ -1,17 +1,16 @@
 class Solution {
     public int solution(int[] num_list) {
         int answer = 0;
-        int sum = 1;
-        int squareSum = 0;
-        
+        int sum = 0;
+        int multiply = 1;
         for (int i = 0; i < num_list.length; i++) {
-            sum *= num_list[i];
-            squareSum += num_list[i];
+            sum += num_list[i];
+            multiply *= num_list[i];
         }
-        if (sum < squareSum * squareSum) {
+        
+        if (sum * sum > multiply) {
             return 1;
-        } else {
-            return 0;
         }
+        return answer;
     }
 }
