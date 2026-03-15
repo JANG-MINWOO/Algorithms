@@ -1,18 +1,13 @@
 class Solution {
     public int solution(String my_string, String is_suffix) {
         int answer = 0;
-        int length = my_string.length();
-        
-        if (length < is_suffix.length()) {
-            return answer;
+        String s = "";
+        if (my_string.length() - is_suffix.length() >= 0) {
+            s = my_string.substring(my_string.length() - is_suffix.length());
+        } else return 0;
+        if (s.equals(is_suffix)) {
+            return 1;
         }
-        
-        String substring = my_string.substring(length - is_suffix.length());
-        
-        if (substring.equals(is_suffix)) {
-            answer = 1;
-        }
-        
         return answer;
     }
 }
