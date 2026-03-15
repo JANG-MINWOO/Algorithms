@@ -6,9 +6,12 @@ class Solution {
         
         if (Integer.parseInt(first) > Integer.parseInt(second)) {
             answer = Integer.parseInt(first);
-        } else {
+        } else if (Integer.parseInt(first) < Integer.parseInt(second)) {
             answer = Integer.parseInt(second);
+        } else {
+            answer = Integer.parseInt(first);
         }
+        
         return answer;
     }
 }
