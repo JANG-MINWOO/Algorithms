@@ -1,19 +1,11 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int[] num_list, int n) {
-        List<Integer> list = new ArrayList<>();
-        
-        for (int i = n - 1; i < num_list.length; i++) {
-            list.add(num_list[i]);
-        }
-        
-        int[] answer = new int[list.size()];
+        int[] answer = new int[num_list.length + 1 - n ];
         
         for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
+            answer[i] = num_list[n - 1];
+            n++;
         }
-        
         return answer;
     }
 }
