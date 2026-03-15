@@ -1,27 +1,18 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int[] arr, int[] delete_list) {
-
-        Set<Integer> deleteSet = new HashSet<>();
-        
-        for (int num : delete_list) {
-            deleteSet.add(num);
-        }
-        
         List<Integer> list = new ArrayList<>();
         
-        for (int num : arr) {
-            if (!deleteSet.contains(num)) {
-                list.add(num);
-            }
+        for (int i = 0; i < arr.length; i++) {
+            int val = arr[i];
+            if (Arrays.stream(delete_list).anyMatch(x -> x == val)) continue;
+            else list.add(arr[i]);
         }
         
-        int[] answer = new int[list.size()];
-        
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
-        }
+        int[] answer = list.stream().mapToInt(i -> i).toArray();
         return answer;
     }
 }
