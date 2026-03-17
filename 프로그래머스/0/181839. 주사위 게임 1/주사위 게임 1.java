@@ -1,14 +1,11 @@
 class Solution {
     public int solution(int a, int b) {
-        int answer = 0;
         if (a % 2 != 0 && b % 2 != 0) {
-            answer = a * a + b * b;
+            return a * a + b * b;
         } else if (a % 2 != 0 || b % 2 != 0) {
-            answer = 2 * (a + b);
-        } else if (a % 2 == 0 && b % 2 == 0) {
-            int minus = a - b;
-            answer = Math.abs(minus);
+            return 2 * (a + b);
+        } else {
+            return Math.abs(a - b);
         }
-        return answer;
     }
 }
