@@ -1,24 +1,14 @@
 class Solution {
     public int[] solution(int[] arr, int n) {
-        int[] answer = new int[arr.length];
-        if (answer.length % 2 ==0) { // 길이가 짝수일때
-            for (int i = 0; i < answer.length; i++) {
-                if (i % 2 == 1) {
-                    answer[i] = arr[i] + n;
-                } else {
-                    answer[i] = arr[i];
-                }
+        if (arr.length % 2 ==0) {
+            for (int i = 1; i < arr.length; i+=2) {
+                arr[i] += n;
             }
         } else {
-            for (int i = 0; i < answer.length; i++) {
-                if (i % 2 == 0) {
-                    answer[i] = arr[i] + n;
-                } else {
-                    answer[i] = arr[i];
-                }
+            for (int i = 0; i < arr.length; i+=2) {
+                arr[i] += n;
             }
         }
-            
-        return answer;
+        return arr;
     }
 }
