@@ -1,18 +1,13 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 class Solution {
     public String[] solution(String[] strArr) {
         List<String> list = new ArrayList<>();
-        for (String str : strArr) {
-            if (!str.contains("ad")) {
-                list.add(str);
-            }
-        }
-        String[] answer = new String[list.size()];
         
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
+        for(String s : strArr) {
+            if (!s.contains("ad")) list.add(s);
         }
-        return answer;
+        return list.toArray(new String[0]);
     }
 }
