@@ -1,21 +1,10 @@
 class Solution {
     public String solution(String my_string, int m, int c) {
-        String answer = "";
-        String[] splited = my_string.split("");
-        int idx = 0;
+        StringBuilder sb = new StringBuilder();
         
-        String[][] converted = new String[my_string.length() / m][m];
-        for (int i = 0; i < converted.length; i++) {
-            for (int j = 0; j < m; j++) {
-                converted[i][j] = splited[idx];
-                idx++;
-            }
+        for (int i = 0; i < my_string.length(); i += m) {
+            sb.append(my_string.charAt(i + c - 1));
         }
-        
-        for (int i = 0; i < converted.length; i++) {
-            answer += converted[i][c - 1];
-        }
-        
-        return answer;
+        return sb.toString();
     }
 }
