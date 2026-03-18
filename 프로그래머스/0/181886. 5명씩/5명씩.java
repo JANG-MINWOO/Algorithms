@@ -1,19 +1,13 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 class Solution {
     public String[] solution(String[] names) {
-        List<String> nameList = new ArrayList<>();
-        for (int i = 0; i < names.length; i++) {
-            if (i % 5 == 0) {
-                nameList.add(names[i]);
-            }
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < names.length; i += 5) {
+            // if (i >= names.length) break;
+            list.add(names[i]);
         }
-        String[] answer = new String[nameList.size()];
-        
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = nameList.get(i);
-        }
-        
-        return answer;
+        return list.toArray(new String[0]);
     }
 }
