@@ -3,9 +3,7 @@ class Solution {
         int answer = 0;
         for (int i = 0; i < numbers.length; i++) {
             answer += numbers[i];
-            if (answer > n) {
-                break;
-            }
+            if (answer > n) return answer;
         }
         return answer;
     }
