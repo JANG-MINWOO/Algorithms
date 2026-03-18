@@ -1,24 +1,13 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public String[] solution(String myString) {
-        String[] splited = myString.split("x");
-        List<String> list = new ArrayList<>();
+        myString = myString.replaceAll("x+", "x");
+        if (myString.charAt(myString.length() - 1) == 'x') myString = myString.substring(0, myString.length() - 1);
+        if (myString.charAt(0) == 'x') myString = myString.substring(1);
         
-        for (String s : splited) {
-            if (!s.isEmpty()) {
-                list.add(s);
-            }
-        }
-        
-        Collections.sort(list);
-        
-        String[] answer = new String[list.size()];
-        
-        for (int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
-        }
-        
+        String[] answer = myString.split("x");
+        Arrays.sort(answer);
         return answer;
     }
 }
