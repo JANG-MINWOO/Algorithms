@@ -1,21 +1,14 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public int[] solution(int n, int k) {
-        int index = 1;
         List<Integer> list = new ArrayList<>();
         
-        while (true) {
-            list.add(k * index);
-            index++;
-            if (k * index > n) break;
+        for (int i = 1; i <= n; i++) {
+            if (i % k == 0) list.add(i);
         }
         
-        int[] answer = new int[list.size()];
-        
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
-        }
-        return answer;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }
