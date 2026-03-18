@@ -1,18 +1,15 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public String[] solution(String[] todo_list, boolean[] finished) {
-        
-        List<String> todoList = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < finished.length; i++) {
-            if (!finished[i]) {
-                todoList.add(todo_list[i]);
+            if (finished[i]) continue;
+            else {
+                list.add(todo_list[i]);
             }
         }
-        String[] answer = new String[todoList.size()];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = todoList.get(i);
-        }
-        return answer;
+        return list.toArray(new String[0]);
     }
 }
