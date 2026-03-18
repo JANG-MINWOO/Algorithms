@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public String[] solution(String my_string) {
@@ -7,9 +7,7 @@ class Solution {
         for (int i = 0; i < answer.length; i++) {
             answer[i] = my_string.substring(i);
         }
-        
         Arrays.sort(answer);
-        
         return answer;
     }
 }
