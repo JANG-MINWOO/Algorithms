@@ -5,15 +5,11 @@ class Solution {
         return count;
     }
     
-    private void dfs(int[] numbers, int target, int depth, int sum) {
-        //종료조건 설정
+    void dfs(int[] numbers, int target, int depth, int sum) {
         if (depth == numbers.length) {
-            if (sum == target) {
-                count++;
-            }
+            if (sum == target) count++;
             return;
         }
-        
         dfs(numbers, target, depth + 1, sum + numbers[depth]);
         dfs(numbers, target, depth + 1, sum - numbers[depth]);
     }
