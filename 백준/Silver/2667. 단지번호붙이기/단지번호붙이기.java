@@ -3,12 +3,12 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Main {
-    public static void main(String[] arg) throws Exception {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         
@@ -20,10 +20,9 @@ public class Main {
             }
         }
         
+        boolean[][] visited = new boolean[N][N];
         int[] dx = {1, -1, 0, 0};
         int[] dy = {0, 0, 1, -1};
-        
-        boolean[][] visited = new boolean[N][N];
         List<Integer> sizes = new ArrayList<>();
         
         for (int i = 0; i < N; i++) {
@@ -34,15 +33,16 @@ public class Main {
                     visited[i][j] = true;
                     int count = 0;
                     
-                    while(!queue.isEmpty()) {
+                    while (!queue.isEmpty()) {
                         int[] cur = queue.poll();
                         count++;
                         
-                        for (int d = 0; d < 4; d++) {
+                        for(int d = 0; d < 4; d++) {
                             int nx = cur[0] + dx[d];
                             int ny = cur[1] + dy[d];
                             
-                            if (nx >= 0 && nx < N && ny >= 0 && ny < N && !visited[nx][ny] && map[nx][ny] == 1) {
+                            if(nx >= 0 && nx < N && ny >= 0 && ny < N
+                              && map[nx][ny]==1 && !visited[nx][ny]) {
                                 visited[nx][ny] = true;
                                 queue.add(new int[]{nx, ny});
                             }
@@ -52,15 +52,14 @@ public class Main {
                 }
             }
         }
-        
         Collections.sort(sizes);
+        
         StringBuilder sb = new StringBuilder();
         sb.append(sizes.size()).append("\n");
-        for (int i = 0; i < sizes.size(); i++) {
+        for(int i = 0; i < sizes.size(); i++) {
             sb.append(sizes.get(i));
-            if(i != sizes.size() - 1) sb.append("\n");
+            if (i != sizes.size() - 1) sb.append("\n");
         }
-        
         System.out.print(sb);
     }
 }
