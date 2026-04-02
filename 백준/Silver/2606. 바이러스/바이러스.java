@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Main {
     static List<List<Integer>> graph;
-    static boolean[] visited;
     static int count = 0;
+    static boolean[] visited;
     
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,17 +23,18 @@ public class Main {
             int b = Integer.parseInt(st.nextToken());
             graph.get(a).add(b);
             graph.get(b).add(a);
-        }//그래프완성
+        }
         
         visited = new boolean[N + 1];
         dfs(1);
+        
         System.out.print(count);
     }
     
     static void dfs(int node) {
         visited[node] = true;
         
-        for (int next : graph.get(node)) {
+        for(int next : graph.get(node)) {
             if (!visited[next]) {
                 count++;
                 dfs(next);
