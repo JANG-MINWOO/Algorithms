@@ -1,11 +1,10 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-import java.util.Queue;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Queue;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -16,13 +15,11 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
         int V = Integer.parseInt(st.nextToken());
         
         graph = new ArrayList<>();
-        
         for (int i = 0; i <= N; i++) {
             graph.add(new ArrayList<>());
         }
@@ -35,7 +32,7 @@ public class Main {
             graph.get(b).add(a);
         }
         
-        for (int i = 0; i <= N; i++) {
+        for (int i = 1; i <= N; i++) {
             Collections.sort(graph.get(i));
         }
         
@@ -53,8 +50,8 @@ public class Main {
         visited[node] = true;
         sb.append(node).append(" ");
         
-        for (int next: graph.get(node)) {
-            if (!visited[next]) {
+        for (int next : graph.get(node)) {
+            if(!visited[next]) {
                 dfs(next);
             }
         }
@@ -65,11 +62,11 @@ public class Main {
         queue.add(start);
         visited[start] = true;
         
-        while (!queue.isEmpty()) {
+        while(!queue.isEmpty()) {
             int node = queue.poll();
             sb.append(node).append(" ");
             
-            for (int next : graph.get(node)) {
+            for (int next: graph.get(node)) {
                 if (!visited[next]) {
                     visited[next] = true;
                     queue.add(next);
